@@ -16,10 +16,18 @@ export default class Bomb extends Component {
     //     }
     //   }
     render() {
-        const gameOver = this.state.secondsLeft === 0 ? 'Boom!' : `${this.state.secondsLeft} seconds left before I go boom!`
+        // const gameOver = this.state.secondsLeft === 0 ? 'Boom!' : `${this.state.secondsLeft} seconds left before I go boom!`
+
+        const gameOver = () =>{
+            if(this.state.secondsLeft === 0){
+                return 'Boom!'
+            }else {
+                return `${this.state.secondsLeft} seconds left before I go boom!`
+            }
+        }
 
         return (
-            <div>{gameOver}</div>
+            <div>{gameOver()}</div>
           )
         }        
     }
